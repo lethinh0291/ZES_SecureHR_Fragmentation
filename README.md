@@ -2,7 +2,7 @@
 
 Ứng dụng desktop quản lý nhân sự hiện đại với giao diện SaaS-style, dữ liệu phân mảnh theo vai trò, và quản lý bảo mật lương thưởng.
 
-## 🎯 Tính năng chính
+## Tính năng chính
 
 ### Kiến trúc dữ liệu
 
@@ -20,7 +20,7 @@
 - **Responsive layout**: Bảng dữ liệu, search, filter, action buttons
 - **Vietnamese localization**: Toàn bộ UI sử dụng tiếng Việt
 
-## 📱 Các trang ứng dụng
+## Các trang ứng dụng
 
 ### Trang Admin (ADMIN)
 
@@ -35,7 +35,7 @@
 2. **Dữ liệu được cấp** - Xem dữ liệu phù hợp vai trò
 3. **Thống kê** - Báo cáo thống kê cơ bản
 
-## 🗂️ Cấu trúc dự án
+## Cấu trúc dự án
 
 ```
 src/
@@ -65,13 +65,13 @@ sql/
 └── setup_securehr.sql                 # Database initialization script
 ```
 
-## 🚀 Yêu cầu hệ thống
+## Yêu cầu hệ thống
 
 - **Java**: 17 hoặc mới hơn
 - **SQL Server**: 2019 hoặc mới hơn (local hoặc remote)
 - **JDBC Driver**: `mssql-jdbc-12.6.1.jre11.jar` (hoặc phiên bản compatible)
 
-## 🔧 Cài đặt cơ sở dữ liệu
+## Cài đặt cơ sở dữ liệu
 
 1. Mở **SQL Server Management Studio**
 2. Thực thi script: `sql/setup_securehr.sql`
@@ -82,7 +82,7 @@ sql/
    - 3 demo user accounts
    - Sample data (nhân viên, lương)
 
-## 👤 Tài khoản demo
+## Tài khoản demo
 
 | Tên đăng nhập | Mật khẩu | Vai trò    | Quyền truy cập              |
 | ------------- | -------- | ---------- | --------------------------- |
@@ -90,7 +90,7 @@ sql/
 | hr            | hr123    | HR_USER    | Dữ liệu nhân viên công khai |
 | accountant    | acc123   | ACCOUNTANT | Dữ liệu lương bảo mật       |
 
-## ⚙️ Cấu hình kết nối
+## Cấu hình kết nối
 
 Chỉnh sửa file `src/securehr/config/DatabaseConfig.java`:
 
@@ -103,7 +103,7 @@ public class DatabaseConfig {
 }
 ```
 
-## 🏃 Chạy ứng dụng
+## Chạy ứng dụng
 
 ### Option 1: Từ VS Code
 
@@ -120,7 +120,7 @@ javac -cp "lib/*" -d bin $(find src -name "*.java")
 java -cp "bin;lib/*" App
 ```
 
-## 📊 Quy trình quản lý dữ liệu
+## Quy trình quản lý dữ liệu
 
 ### Admin - Xem đầy đủ
 
@@ -149,17 +149,17 @@ ACCOUNTANT → Query salary data → DB2 only →
   └── No personal profile details
 ```
 
-## 🔒 Bảo mật
+## Bảo mật
 
 - **Role-based Access Control (RBAC)**: Mỗi vai trò chỉ được truy cập dữ liệu phù hợp
 - **SQL Injection Prevention**: Sử dụng PreparedStatements
 - **Data Fragmentation**: Lương được lưu riêng biệt trên DB2
 - **Audit Trail**: Các tác vụ thêm/xóa được tracked qua stored procedures
 
-⚠️ **Lưu ý bảo mật**: Password hiện được lưu dạng plain text cho mục đích demo.
-Trong production, sử dụng hashing algorithm (BCrypt/Argon2) + salt.
+  **Lưu ý bảo mật**: Password hiện được lưu dạng plain text cho mục đích demo.
+  Trong production, sử dụng hashing algorithm (BCrypt/Argon2) + salt.
 
-## 💡 Các công nghệ sử dụng
+## Các công nghệ sử dụng
 
 - **UI Framework**: Java Swing + FlatLaf 3.7
 - **Database**: SQL Server 2019+ với JDBC
